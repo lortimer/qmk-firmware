@@ -57,6 +57,9 @@
 #ifndef ENCODER_BUTTON_COL
 #    define ENCODER_BUTTON_COL 0
 #endif
+#ifndef PLOOPY_DRAGSCROLL_DELAY
+#    define PLOOPY_DRAGSCROLL_DELAY 2
+#endif
 
 keyboard_config_t keyboard_config;
 uint16_t          dpi_array[] = PLOOPY_DPI_OPTIONS;
@@ -65,8 +68,10 @@ uint16_t          dpi_array[] = PLOOPY_DPI_OPTIONS;
 // Trackball State
 bool  is_scroll_clicked    = false;
 bool  is_drag_scroll       = false;
+bool  is_drag_scroll_macos = false;
 float scroll_accumulated_h = 0;
 float scroll_accumulated_v = 0;
+uint8_t scroll_delay_accumulator = 0;
 
 #ifdef ENCODER_ENABLE
 uint16_t lastScroll        = 0; // Previous confirmed wheel event
@@ -132,6 +137,10 @@ void toggle_drag_scroll(void) {
     is_drag_scroll ^= 1;
 }
 
+void toggle_drag_scroll_mac_os(void) {
+    is_drag_scroll_macos ^= 1;
+}
+
 void cycle_dpi(void) {
     keyboard_config.dpi_config = (keyboard_config.dpi_config + 1) % DPI_OPTION_SIZE;
     eeconfig_update_kb(keyboard_config.raw);
@@ -158,7 +167,46 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
         // Clear the X and Y values of the mouse report
         mouse_report.x = 0;
         mouse_report.y = 0;
+    }
 
+    if (is_drag_scroll_macos) {
+
+        scroll_delay_accumulator += 1;
+
+        // If our accumulator has hit or passed the delay setting, we have waiting the set number of "frames" and
+        // it's time to send a scroll event
+        if (scroll_delay_accumulator >= PLOOPY_DRAGSCROLL_DELAY) {
+            scroll_delay_accumulator = 0;
+        }
+
+        if (scroll_delay_accumulator == 0) {
+            // tap mouse wheel based on change in mouse x and y
+
+#ifdef PLOOPY_DRAGSCROLL_INVERT
+            if (mouse_report.y < 0) {
+                tap_code(KC_WH_U);
+            }
+            if (mouse_report.y > 0) {
+                tap_code(KC_WH_D);
+            }
+#else
+            if (mouse_report.y > 0) {
+                tap_code(KC_WH_U);
+            }
+            if (mouse_report.y < 0) {
+                tap_code(KC_WH_D);
+            }
+#endif
+
+            if (mouse_report.x > 0) {
+                tap_code(KC_WH_R);
+            }
+            if (mouse_report.x < 0) {
+                tap_code(KC_WH_L);
+            }
+        }
+
+        // Clear the X and Y values of the mouse report
         mouse_report.x = 0;
         mouse_report.y = 0;
     }
@@ -193,8 +241,18 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         }
     }
 
+    if (keycode == DRAG_SCROLL_MACOS) {
+        if (record->event.pressed) {
+            toggle_drag_scroll_mac_os();
+        }
+    }
+
     if (keycode == DRAG_SCROLL_MOMENTARY) {
         is_drag_scroll = record->event.pressed;
+    }
+
+    if (keycode == DRAG_SCROLL_MOMENTARY_MACOS) {
+        is_drag_scroll_macos = record->event.pressed;
     }
 
     return true;

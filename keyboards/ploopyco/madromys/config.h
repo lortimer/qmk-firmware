@@ -29,7 +29,7 @@
 #define PLOOPY_DRAGSCROLL_DIVISOR_V 24.0
 #define PLOOPY_DPI_OPTIONS { 500, 1000 } // Set DPI options, DPI key will cycle through
 #define PLOOPY_DPI_DEFAULT 0 // Set second DPI value as default
-
+#define PLOOPY_DRAGSCROLL_DELAY 12 // Set how many 'frames' MacOS dragscroll should skip, reduces scroll speed
 
 /* PMW3360 Settings */
 #define PMW33XX_LIFTOFF_DISTANCE 0x00

@@ -5,10 +5,8 @@ Following https://github.com/ploopyco/adept-trackball/wiki/Appendix-D%3A-QMK-Fir
 ## To Do
 
 - Edit in Vial
-  - [X] Split dragscroll into momentary and non so I can hold a key to get it to be momentary, or double-click the same key to be non-momentary
-    - [X] Holding momentary drag scroll takes ~200 ms to activate, so mouse cursor moves in the meantime. Either create a new combo (like mouse1 + momentary) to turn on drag scroll, or reduce the delay.
-  - [ ] Create a version of dragscroll that uses `MS_WH_UP` type events instead of `mouse_report.v`
-    - [ ] Create a layer for this to use on MacOS, on which the existing dragscroll is unreliable
+  - [X] Create a version of dragscroll that uses `MS_WH_UP` type events instead of `mouse_report.v` ()
+    - [X] Create a layer for this to use on MacOS, on which the existing dragscroll is unreliable
   - [ ] Other ideas from here: https://www.reddit.com/r/ploopy/comments/1bha9j7/ploopy_adept_with_vial_firmware_quick_write_up_on/
 
 ## Current Keymap, Combos, etc.
@@ -24,9 +22,16 @@ Layout assumes using the adept rotated 180 degrees
 - Momentary Drag Scroll: Bottom Right
 
 ### Combos
-- View All Windows: Bottom left and top right. Sends Macro 0, Ctrl+Shift+Alt+Semicolon, which is configured to show all windows in the OS
-- Toggle Drag Scroll on or off: Bottom left and bottom right. Triggers the drag scroll key, which I've made different than the momentary drag scroll key.
-- Adjust DPI: click both of the small, middle buttons
+1. Adjust DPI: click both of the small, middle buttons
+2. View All Windows: Bottom left and top right. Sends Macro 0, Ctrl+Shift+Alt+Semicolon, which is configured to show all windows in the OS
+3. Toggle Drag Scroll on or off: Bottom left and bottom right _when on layer 0_. Triggers the drag scroll key, which I've made different than the momentary drag scroll key.
+4. Switch Default layer to 1 (Mac mouse buttons): Bottom Right and Middle Right _when on layer 0_
+5. Switch Default layer to 0 (non-Mac mouse buttons): Bottom Right and Middle Right _when on layer 1_
+6. Toggle Drag Scroll on or off: Bottom left and bottom right _when on layer 1_. Triggers the drag scroll key, which I've made different than the momentary drag scroll key.
+
+### Layers
+0. Mouse buttons for use on Linux and Windows
+1. Mouse buttons for use on MacOS
 
 ## Setup QMK
 
