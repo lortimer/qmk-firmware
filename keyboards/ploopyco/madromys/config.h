@@ -25,11 +25,10 @@
 //#define POINTING_DEVICE_INVERT_Y // Don't invert Y so I can use Adept upside down
 #define POINTING_DEVICE_INVERT_X // Invert X so I can use Adept updside down
 #define PLOOPY_DRAGSCROLL_INVERT // Invert drag scroll direction so I can use Adept updside down
-//#define PLOOPY_DRAGSCROLL_MOMENTARY // Makes it so you have to hold the dragscroll key
 #define PLOOPY_DRAGSCROLL_DIVISOR_H 24.0 // Set drag scroll divisor to higher number so it isn't so fast
 #define PLOOPY_DRAGSCROLL_DIVISOR_V 24.0
 #define PLOOPY_DPI_OPTIONS { 500, 1000 } // Set DPI options, DPI key will cycle through
-#define PLOOPY_DPI_DEFAULT 1 // Set second DPI value as default
+#define PLOOPY_DPI_DEFAULT 0 // Set second DPI value as default
 
 
 /* PMW3360 Settings */

@@ -43,7 +43,8 @@ I was then able to run the Vial appimage and it recognized the adept and showed 
 ## To Do
 
 - Edit in Vial
-  - [ ] Split dragscroll into momentary and non so I can hold a key to get it to be momentary, or double-click the same key to be non-momentary
+  - [X] Split dragscroll into momentary and non so I can hold a key to get it to be momentary, or double-click the same key to be non-momentary
+    - [ ] Holding momentary drag scroll takes ~200 ms to activate, so mouse cursor moves in the meantime. Either create a new combo (like mouse1 + momentary) to turn on drag scroll, or reduce the delay.
   - [ ] Create a version of dragscroll that uses `MS_WH_UP` type events instead of `mouse_report.v`
     - [ ] Create a layer for this to use on MacOS, on which the existing dragscroll is unreliable
   - [ ] Other ideas from here: https://www.reddit.com/r/ploopy/comments/1bha9j7/ploopy_adept_with_vial_firmware_quick_write_up_on/

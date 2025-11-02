@@ -5,7 +5,8 @@
   "lighting": "none",
   "customKeycodes": [
     {"name": "DPI Config", "title": "DPI Config", "shortName": "DPI"},
-    {"name": "Drag Scroll", "title": "Drag Scroll", "shortName": "Drag\nScrl"}
+    {"name": "Drag Scroll", "title": "Drag Scroll", "shortName": "Drag\nScrl"},
+    {"name": "Momentary Drag Scroll", "title": "Momentary Drag Scroll", "shortName": "Mmtry\nDrag\nScrl"}
   ],
   "matrix": {"rows": 1, "cols": 6},
   "layouts": {
