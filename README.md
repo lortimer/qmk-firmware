@@ -2,6 +2,32 @@
 
 Following https://github.com/ploopyco/adept-trackball/wiki/Appendix-D%3A-QMK-Firmware-Programming to be able to customize my own firmware for the ploopy adept.
 
+## To Do
+
+- Edit in Vial
+  - [X] Split dragscroll into momentary and non so I can hold a key to get it to be momentary, or double-click the same key to be non-momentary
+    - [X] Holding momentary drag scroll takes ~200 ms to activate, so mouse cursor moves in the meantime. Either create a new combo (like mouse1 + momentary) to turn on drag scroll, or reduce the delay.
+  - [ ] Create a version of dragscroll that uses `MS_WH_UP` type events instead of `mouse_report.v`
+    - [ ] Create a layer for this to use on MacOS, on which the existing dragscroll is unreliable
+  - [ ] Other ideas from here: https://www.reddit.com/r/ploopy/comments/1bha9j7/ploopy_adept_with_vial_firmware_quick_write_up_on/
+
+## Current Keymap, Combos, etc.
+
+Layout assumes using the adept rotated 180 degrees
+
+### Keymap
+- Left Click: Bottom Left
+- Right Click: Top Right
+- Middle Click: Top Left
+- Back: Middle Left
+- Forward: Middle Right
+- Momentary Drag Scroll: Bottom Right
+
+### Combos
+- View All Windows: Bottom left and top right. Sends Macro 0, Ctrl+Shift+Alt+Semicolon, which is configured to show all windows in the OS
+- Toggle Drag Scroll on or off: Bottom left and bottom right. Triggers the drag scroll key, which I've made different than the momentary drag scroll key.
+- Adjust DPI: click both of the small, middle buttons
+
 ## Setup QMK
 
 Following https://docs.qmk.fm/newbs_getting_started
@@ -39,12 +65,3 @@ Doing a search lead me to something about submodules. I ran `qmk doctor` at the 
 After that, I reran the flash command and it seems to have worked. I didn't even have to unplug and replug the mouse, it was working after that.
 
 I was then able to run the Vial appimage and it recognized the adept and showed me the current layout.
-
-## To Do
-
-- Edit in Vial
-  - [X] Split dragscroll into momentary and non so I can hold a key to get it to be momentary, or double-click the same key to be non-momentary
-    - [ ] Holding momentary drag scroll takes ~200 ms to activate, so mouse cursor moves in the meantime. Either create a new combo (like mouse1 + momentary) to turn on drag scroll, or reduce the delay.
-  - [ ] Create a version of dragscroll that uses `MS_WH_UP` type events instead of `mouse_report.v`
-    - [ ] Create a layer for this to use on MacOS, on which the existing dragscroll is unreliable
-  - [ ] Other ideas from here: https://www.reddit.com/r/ploopy/comments/1bha9j7/ploopy_adept_with_vial_firmware_quick_write_up_on/
