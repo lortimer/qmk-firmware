@@ -43,5 +43,7 @@ I was then able to run the Vial appimage and it recognized the adept and showed 
 ## To Do
 
 - Edit in Vial
-  - Dragscroll is a macro that clicks once, then does drag scroll on double-tap of the key, then dragscroll is released when clicked again?
-  - Other ideas from here: https://www.reddit.com/r/ploopy/comments/1bha9j7/ploopy_adept_with_vial_firmware_quick_write_up_on/
+  - [ ] Split dragscroll into momentary and non so I can hold a key to get it to be momentary, or double-click the same key to be non-momentary
+  - [ ] Create a version of dragscroll that uses `MS_WH_UP` type events instead of `mouse_report.v`
+    - [ ] Create a layer for this to use on MacOS, on which the existing dragscroll is unreliable
+  - [ ] Other ideas from here: https://www.reddit.com/r/ploopy/comments/1bha9j7/ploopy_adept_with_vial_firmware_quick_write_up_on/
