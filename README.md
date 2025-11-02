@@ -42,18 +42,6 @@ I was then able to run the Vial appimage and it recognized the adept and showed 
 
 ## To Do
 
-- Update and Flash new firmware
-  - ~~Invert scroll direction of trackball, using POINTING_DEVICE_INVERT_Y: https://www.reddit.com/r/ploopy/comments/rglobf/comment/hom5lkw/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button~~
-  - 0,0 (BL)  --> 0,4
-  - 0,1 (TLL) --> 0,5
-  - 0,2 (TLM) --> 0,3
-  - 0,3 (TRM) --> 0,2
-  - 0,4 (TRR) --> 0,0
-  - 0,5 (BR)  --> 0,1
 - Edit in Vial
-  - Set up buttons for using the device upside down
-  - Add Layers and other combos
-    - Dragscroll is a macro that clicks once, then does drag scroll on double-tap of the key, then dragscroll is released when clicked again?
-    - Other ideas from here: https://www.reddit.com/r/ploopy/comments/1bha9j7/ploopy_adept_with_vial_firmware_quick_write_up_on/
-
-=
+  - Dragscroll is a macro that clicks once, then does drag scroll on double-tap of the key, then dragscroll is released when clicked again?
+  - Other ideas from here: https://www.reddit.com/r/ploopy/comments/1bha9j7/ploopy_adept_with_vial_firmware_quick_write_up_on/
