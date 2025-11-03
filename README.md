@@ -4,10 +4,7 @@ Following https://github.com/ploopyco/adept-trackball/wiki/Appendix-D%3A-QMK-Fir
 
 ## To Do
 
-- Edit in Vial
-  - [X] Create a version of dragscroll that uses `MS_WH_UP` type events instead of `mouse_report.v` ()
-    - [X] Create a layer for this to use on MacOS, on which the existing dragscroll is unreliable
-  - [ ] Other ideas from here: https://www.reddit.com/r/ploopy/comments/1bha9j7/ploopy_adept_with_vial_firmware_quick_write_up_on/
+- [ ] Other ideas from here: https://www.reddit.com/r/ploopy/comments/1bha9j7/ploopy_adept_with_vial_firmware_quick_write_up_on/
 
 ## Current Keymap, Combos, etc.
 
