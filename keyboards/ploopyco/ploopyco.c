@@ -171,44 +171,21 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
 
     if (is_drag_scroll_macos) {
 
-        scroll_delay_accumulator += 1;
+        scroll_accumulated_v += (float)mouse_report.y / PLOOPY_DRAGSCROLL_DIVISOR_V;
 
-        // If our accumulator has hit or passed the delay setting, we have waiting the set number of "frames" and
-        // it's time to send a scroll event
-        if (scroll_delay_accumulator >= PLOOPY_DRAGSCROLL_DELAY) {
-            scroll_delay_accumulator = 0;
-        }
-
-        if (scroll_delay_accumulator == 0) {
-            // tap mouse wheel based on change in mouse x and y
-
+        // Assign integer parts of accumulated scroll values to the mouse report
 #ifdef PLOOPY_DRAGSCROLL_INVERT
-            if (mouse_report.y < 0) {
-                tap_code(KC_WH_U);
-            }
-            if (mouse_report.y > 0) {
-                tap_code(KC_WH_D);
-            }
+        mouse_report.v = -(int8_t)scroll_accumulated_v;
 #else
-            if (mouse_report.y > 0) {
-                tap_code(KC_WH_U);
-            }
-            if (mouse_report.y < 0) {
-                tap_code(KC_WH_D);
-            }
+        mouse_report.v = (int8_t)scroll_accumulated_v;
 #endif
 
-            if (mouse_report.x > 0) {
-                tap_code(KC_WH_R);
-            }
-            if (mouse_report.x < 0) {
-                tap_code(KC_WH_L);
-            }
-        }
+        // Update accumulated scroll values by subtracting the integer parts
+        scroll_accumulated_v -= (int8_t)scroll_accumulated_v;
 
-        // Clear the X and Y values of the mouse report
-        mouse_report.x = 0;
-        mouse_report.y = 0;
+    // Clear the X and Y values of the mouse report
+    mouse_report.x = 0;
+    mouse_report.y = 0;
     }
 
     return pointing_device_task_user(mouse_report);
