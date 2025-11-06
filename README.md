@@ -12,6 +12,7 @@ Layout assumes using the adept rotated 180 degrees
 
 ### Macros
 0. Press Ctrl+Shift+Alt, tap semicolon, release Ctrl+Shift+Alt
+0. Press Ctrl+Shift+Alt, tap apostrophe, release Ctrl+Shift+Alt
 
 ### Combos
 1. Adjust DPI: click both of the small, middle buttons
@@ -20,6 +21,7 @@ Layout assumes using the adept rotated 180 degrees
 4. Switch Default layer to 1 (Mac mouse buttons): Bottom Right and Middle Right _when on layer 0_
 5. Switch Default layer to 0 (non-Mac mouse buttons): Bottom Right and Middle Right _when on layer 1_
 6. Toggle Drag Scroll on or off: Bottom left and bottom right _when on layer 1_. Triggers the drag scroll key, which I've made different than the momentary drag scroll key.
+7. View All App Windows: Top left and top right. Sends Macro1, Ctrl+Shift+Alt+Apostrophe, which is configured to show all windows for the current app in the OS
 
 ### Keymap
 
