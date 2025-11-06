@@ -32,10 +32,10 @@ extern uint16_t          dpi_array[];
 
 enum ploopy_keycodes {
     DPI_CONFIG = QK_KB_0,
-    DRAG_SCROLL,
+    DRAG_SCROLL_TOGGLE,
     DRAG_SCROLL_MOMENTARY,
-    DRAG_SCROLL_MACOS,
-    DRAG_SCROLL_MOMENTARY_MACOS,
+    DRAG_SCROLL_TOGGLE_MACOS_VERTICAL,
+    DRAG_SCROLL_MOMENTARY_MACOS_VERTICAL,
 };
 
 bool encoder_update_user(uint8_t index, bool clockwise);

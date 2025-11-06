@@ -10,13 +10,8 @@ Following https://github.com/ploopyco/adept-trackball/wiki/Appendix-D%3A-QMK-Fir
 
 Layout assumes using the adept rotated 180 degrees
 
-### Keymap
-- Left Click: Bottom Left
-- Right Click: Top Right
-- Middle Click: Top Left
-- Back: Middle Left
-- Forward: Middle Right
-- Momentary Drag Scroll: Bottom Right
+### Macros
+0. Press Ctrl+Shift+Alt, tap semicolon, release Ctrl+Shift+Alt
 
 ### Combos
 1. Adjust DPI: click both of the small, middle buttons
@@ -26,9 +21,23 @@ Layout assumes using the adept rotated 180 degrees
 5. Switch Default layer to 0 (non-Mac mouse buttons): Bottom Right and Middle Right _when on layer 1_
 6. Toggle Drag Scroll on or off: Bottom left and bottom right _when on layer 1_. Triggers the drag scroll key, which I've made different than the momentary drag scroll key.
 
-### Layers
-0. Mouse buttons for use on Linux and Windows
-1. Mouse buttons for use on MacOS
+### Keymap
+
+#### Layer 0
+- Left Click: Bottom Left
+- Right Click: Top Right
+- Middle Click: Top Left
+- Back: Middle Left
+- Forward: Middle Right
+- Momentary Drag Scroll: Bottom Right
+
+#### Layer 1
+- Left Click: Bottom Left
+- Right Click: Top Right
+- Middle Click: Top Left
+- Back: Middle Left
+- Forward: Middle Right
+- Momentary Drag Scroll for MacOS, vertical only: Bottom Right
 
 ## Setup QMK
 
