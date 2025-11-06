@@ -183,9 +183,9 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
         // Update accumulated scroll values by subtracting the integer parts
         scroll_accumulated_v -= (int8_t)scroll_accumulated_v;
 
-        // Clear the X and Y values of the mouse report
-        mouse_report.x = 0;
-        mouse_report.y = 0;
+    // Clear the X and Y values of the mouse report
+    mouse_report.x = 0;
+    mouse_report.y = 0;
     }
 
     return pointing_device_task_user(mouse_report);
