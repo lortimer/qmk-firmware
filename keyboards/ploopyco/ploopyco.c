@@ -57,9 +57,6 @@
 #ifndef ENCODER_BUTTON_COL
 #    define ENCODER_BUTTON_COL 0
 #endif
-#ifndef PLOOPY_DRAGSCROLL_DELAY
-#    define PLOOPY_DRAGSCROLL_DELAY 2
-#endif
 
 keyboard_config_t keyboard_config;
 uint16_t          dpi_array[] = PLOOPY_DPI_OPTIONS;
@@ -71,7 +68,6 @@ bool  is_drag_scroll       = false;
 bool  is_drag_scroll_macos_vertical = false;
 float scroll_accumulated_h = 0;
 float scroll_accumulated_v = 0;
-uint8_t scroll_delay_accumulator = 0;
 
 #ifdef ENCODER_ENABLE
 uint16_t lastScroll        = 0; // Previous confirmed wheel event
