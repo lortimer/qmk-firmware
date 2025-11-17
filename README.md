@@ -12,7 +12,7 @@ Layout assumes using the adept rotated 180 degrees
 
 ### Macros
 0. Press Ctrl+Shift+Alt, tap semicolon, release Ctrl+Shift+Alt
-0. Press Ctrl+Shift+Alt, tap apostrophe, release Ctrl+Shift+Alt
+1. Press Ctrl+Shift+Alt, tap apostrophe, release Ctrl+Shift+Alt
 
 ### Combos
 1. Adjust DPI: click both of the small, middle buttons
